@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        #numberDisplay {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="numberDisplay">Generate a number...</div>
+    <button id="generateButton">Generate Number</button>
+
+    <script>
+        const numberDisplay = document.getElementById('numberDisplay');
+        const generateButton = document.getElementById('generateButton');
+
+        generateButton.addEventListener('click', () => {
+            const randomNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+            numberDisplay.textContent = randomNumber;
+            numberDisplay.style.color = 'black';
+        });
+
+    </script>
+</body>
+</html>
